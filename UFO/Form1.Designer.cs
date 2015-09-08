@@ -134,6 +134,7 @@
             this.Controls.Add(this.Reset);
             this.Controls.Add(this.bar);
             this.Controls.Add(this.UFO);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "UFO";
