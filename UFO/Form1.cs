@@ -229,6 +229,9 @@ namespace UFO
                 case Keys.L:
                     ChangeLanguage();
                     break;
+                case Keys.R:
+                    Initialize();
+                    break;
             }
         }
     }
