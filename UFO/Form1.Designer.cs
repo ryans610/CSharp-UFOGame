@@ -129,6 +129,7 @@
             this.LanguageChange.Name = "LanguageChange";
             this.LanguageChange.Size = new System.Drawing.Size(70, 23);
             this.LanguageChange.TabIndex = 8;
+            this.LanguageChange.TabStop = false;
             this.LanguageChange.Text = "繁體中文";
             this.LanguageChange.UseVisualStyleBackColor = true;
             this.LanguageChange.Click += new System.EventHandler(this.LanguageChange_Click);
