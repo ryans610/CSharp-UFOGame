@@ -5,6 +5,8 @@
 C# .NET 4 above
 
 #How to Use
+選擇其中一種：Choose one:
+
 1.下載專案並編譯。Download the project and complie.
 
 2.下載執行檔。Download .exe file.
