@@ -14,11 +14,31 @@ namespace UFO
         public Form1()
         {
             InitializeComponent();
+            Dictionary<string, string> eng = new Dictionary<string, string>();
+            eng.Add("surviveTime", "Survive Time");
+            eng.Add("speed", "Speed");
+            eng.Add("second", "sec");
+            eng.Add("pause", "Pause");
+            eng.Add("continue", "Continue");
+            eng.Add("dead", "You are dead");
+            eng.Add("reset", "ReStart");
+            dictionary.Add("eng", eng);
+            languageList.Add("English", "eng");
+            Dictionary<string, string> cht = new Dictionary<string, string>();
+            cht.Add("surviveTime", "存活時間");
+            cht.Add("speed", "速度");
+            cht.Add("second", "秒");
+            cht.Add("pause", "暫停");
+            cht.Add("continue", "繼續");
+            cht.Add("dead", "你死了");
+            cht.Add("reset", "重新開始");
+            dictionary.Add("cht", cht);
+            languageList.Add("繁體中文", "cht");
             Initialize();
             timer1.Enabled = true;
         }
 
-        //初始化
+        //initialize
         private void Initialize()
         {
             surviveTime = 0;
@@ -29,24 +49,71 @@ namespace UFO
             PanelUpdate();
         }
 
-        //參數設定
+        //propertie
         private int speed = 1;
         private int stepX = 1;
         private int stepY = 1;
         private double surviveTime = 0;
+        private string language = "cht";
 
-        //文字設定
+        //message
+        private Dictionary<string, string> languageList = new Dictionary<string, string>();
+        private Dictionary<string, Dictionary<string, string>> dictionary = new Dictionary<string, Dictionary<string, string>>();
+        
         private void PanelUpdate()
         {
-            ScorePanel.Text = "存活時間：" + surviveTime.ToString("0.00") + "秒 速度：" + speed.ToString();
+            ScorePanel.Text = dictionary[language]["surviveTime"] + "：" + surviveTime.ToString("0.00") + dictionary[language]["second"] + " " + dictionary[language]["speed"] + "：" + speed.ToString();
+        }
+
+        private void LanguageChange_Click(object sender, EventArgs e)
+        {
+            ChangeLanguage();
+            ScorePanel.Focus();
+        }
+
+        private void ChangeLanguage()
+        {
+            bool found = false;
+            foreach (KeyValuePair<string, string> kv in languageList)
+            {
+                if (found)
+                {
+                    language = kv.Value;
+                    LanguageChange.Text = kv.Key;
+                    found = false;
+                    break;
+                }
+                else
+                {
+                    if (kv.Key == LanguageChange.Text)
+                    {
+                        found = true;
+                    }
+                }
+            }
+            if (found)
+            {
+                language = languageList.ElementAt(0).Value;
+                LanguageChange.Text = languageList.ElementAt(0).Key;
+            }
+            PanelUpdate();
+            if (timer1.Enabled)
+            {
+                Pause.Text = dictionary[language]["pause"];
+            }
+            else
+            {
+                Pause.Text = dictionary[language]["continue"];
+            }
+            Reset.Text = dictionary[language]["reset"];
         }
 
         //timer
         private void timer1_Tick(object sender, EventArgs e)
         {
-            //移動
+            //move
             UFO.Location = new Point(UFO.Location.X + stepX * speed, UFO.Location.Y + stepY * speed);
-            //反彈
+            //bounce
             if (UFO.Location.Y + UFO.Height > bar.Location.Y &&
                 UFO.Location.Y < bar.Location.Y &&
                 UFO.Location.X > bar.Location.X - UFO.Width &&
@@ -62,14 +129,14 @@ namespace UFO
             {
                 stepY = -stepY;
             }
-            //分數計算
+            //score
             surviveTime += (double)timer1.Interval / 1000;
             PanelUpdate();
-            //死亡判斷
+            //dead
             if (UFO.Location.Y + UFO.Height > this.Height)
             {
                 timer1.Enabled = false;
-                MessageBox.Show("你死了!\n存活時間：" + surviveTime.ToString("0.00") + "秒");
+                MessageBox.Show(dictionary[language]["dead"] + "!\n" + dictionary[language]["surviveTime"] + "：" + surviveTime.ToString("0.00") + dictionary[language]["second"]);
                 Initialize();
             }
         }
@@ -101,12 +168,12 @@ namespace UFO
         {
             if (timer1.Enabled)
             {
-                Pause.Text = "繼續";
+                Pause.Text = dictionary[language]["continue"];
                 timer1.Enabled = false;
             }
             else
             {
-                Pause.Text = "暫停";
+                Pause.Text = dictionary[language]["pause"];
                 timer1.Enabled = true;
             }
         }
@@ -150,7 +217,7 @@ namespace UFO
                     break;
                 case Keys.Escape:
                     timer1.Enabled = false;
-                    MessageBox.Show("存活時間：" + surviveTime.ToString("0.00") + "秒");
+                    MessageBox.Show(dictionary[language]["surviveTime"] + "：" + surviveTime.ToString("0.00") + dictionary[language]["second"]);
                     this.Close();
                     break;
                 case Keys.Add:
@@ -158,6 +225,9 @@ namespace UFO
                     break;
                 case Keys.Subtract:
                     SpeedChange(-1);
+                    break;
+                case Keys.L:
+                    ChangeLanguage();
                     break;
             }
         }

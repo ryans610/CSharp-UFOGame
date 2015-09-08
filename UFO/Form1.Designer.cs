@@ -38,6 +38,7 @@
             this.Pause = new System.Windows.Forms.Button();
             this.SpeedUp = new System.Windows.Forms.Button();
             this.SpeedDown = new System.Windows.Forms.Button();
+            this.LanguageChange = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.UFO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bar)).BeginInit();
             this.SuspendLayout();
@@ -70,7 +71,7 @@
             // 
             // Reset
             // 
-            this.Reset.Location = new System.Drawing.Point(68, 29);
+            this.Reset.Location = new System.Drawing.Point(88, 29);
             this.Reset.Name = "Reset";
             this.Reset.Size = new System.Drawing.Size(75, 23);
             this.Reset.TabIndex = 5;
@@ -93,7 +94,7 @@
             // 
             this.Pause.Location = new System.Drawing.Point(12, 29);
             this.Pause.Name = "Pause";
-            this.Pause.Size = new System.Drawing.Size(50, 23);
+            this.Pause.Size = new System.Drawing.Size(70, 23);
             this.Pause.TabIndex = 3;
             this.Pause.TabStop = false;
             this.Pause.Text = "暫停";
@@ -102,7 +103,7 @@
             // 
             // SpeedUp
             // 
-            this.SpeedUp.Location = new System.Drawing.Point(149, 29);
+            this.SpeedUp.Location = new System.Drawing.Point(169, 29);
             this.SpeedUp.Name = "SpeedUp";
             this.SpeedUp.Size = new System.Drawing.Size(23, 23);
             this.SpeedUp.TabIndex = 6;
@@ -113,7 +114,7 @@
             // 
             // SpeedDown
             // 
-            this.SpeedDown.Location = new System.Drawing.Point(178, 29);
+            this.SpeedDown.Location = new System.Drawing.Point(198, 29);
             this.SpeedDown.Name = "SpeedDown";
             this.SpeedDown.Size = new System.Drawing.Size(23, 23);
             this.SpeedDown.TabIndex = 7;
@@ -122,11 +123,22 @@
             this.SpeedDown.UseVisualStyleBackColor = true;
             this.SpeedDown.Click += new System.EventHandler(this.SpeedDown_Click);
             // 
+            // LanguageChange
+            // 
+            this.LanguageChange.Location = new System.Drawing.Point(227, 29);
+            this.LanguageChange.Name = "LanguageChange";
+            this.LanguageChange.Size = new System.Drawing.Size(70, 23);
+            this.LanguageChange.TabIndex = 8;
+            this.LanguageChange.Text = "繁體中文";
+            this.LanguageChange.UseVisualStyleBackColor = true;
+            this.LanguageChange.Click += new System.EventHandler(this.LanguageChange_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.LanguageChange);
             this.Controls.Add(this.SpeedDown);
             this.Controls.Add(this.SpeedUp);
             this.Controls.Add(this.Pause);
@@ -158,6 +170,7 @@
         private System.Windows.Forms.Button Pause;
         private System.Windows.Forms.Button SpeedUp;
         private System.Windows.Forms.Button SpeedDown;
+        private System.Windows.Forms.Button LanguageChange;
     }
 }
 
