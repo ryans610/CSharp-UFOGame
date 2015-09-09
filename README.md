@@ -12,7 +12,7 @@ C# .NET 4 above
 2.下載執行檔。Download .exe file.
 
 #How to Play
-![alt tag](https://github.com/ryans610/CSharp-UFOGame/blob/master/assets/UFO.png)
+![Example Image](https://github.com/ryans610/CSharp-UFOGame/blob/master/assets/UFO.png)
 
 使用滑鼠控制橫桿，使飛碟不會掉落。Use mouse to control bar, try keep the UFO not fall.
 
@@ -25,3 +25,39 @@ C# .NET 4 above
 使用"English/繁體中文"(L)以切換遊戲介面語言。Use "English/繁體中文"(L) to change the UI language.
 
 關閉視窗或按ESC以結束遊戲。Close the window or press ESC to end the game.
+
+***
+#Information
+###Latest Update
+2015/09/09
+
+###Version
+2.1.1
+
+###Age
+0+
+
+###System Requirements
+Windows
+
+.NET Framework 4+
+
+###Version History
+####2.1.1
+-修正多國語言資料的載入位置。
+
+####2.1.0
+-修正多國語言的顯示設定，現在會顯示可切換的下一種語言。
+
+####2.0.0
+-將多數系統數值修改為相對，以達成更好的系統彈性。
+
+-加上視窗的icon。
+
+-加入暫停/繼續遊戲的功能。
+
+-加上資訊顯示面板，現在會顯示存活時間與遊戲速度。
+
+-加入加速/減速的功能。
+
+-加入各功能的快捷鍵。
