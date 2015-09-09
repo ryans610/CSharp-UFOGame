@@ -14,26 +14,6 @@ namespace UFO
         public Form1()
         {
             InitializeComponent();
-            Dictionary<string, string> eng = new Dictionary<string, string>();
-            eng.Add("surviveTime", "Survive Time");
-            eng.Add("speed", "Speed");
-            eng.Add("second", "sec");
-            eng.Add("pause", "Pause");
-            eng.Add("continue", "Continue");
-            eng.Add("dead", "You are dead");
-            eng.Add("reset", "ReStart");
-            dictionary.Add("eng", eng);
-            languageList.Add("English", "eng");
-            Dictionary<string, string> cht = new Dictionary<string, string>();
-            cht.Add("surviveTime", "存活時間");
-            cht.Add("speed", "速度");
-            cht.Add("second", "秒");
-            cht.Add("pause", "暫停");
-            cht.Add("continue", "繼續");
-            cht.Add("dead", "你死了");
-            cht.Add("reset", "重新開始");
-            dictionary.Add("cht", cht);
-            languageList.Add("繁體中文", "cht");
             Initialize();
             timer1.Enabled = true;
         }
@@ -57,8 +37,30 @@ namespace UFO
         private string language = "cht";
 
         //message
-        private Dictionary<string, string> languageList = new Dictionary<string, string>();
-        private Dictionary<string, Dictionary<string, string>> dictionary = new Dictionary<string, Dictionary<string, string>>();
+        private Dictionary<string, string> languageList = new Dictionary<string, string>(){
+            {"English", "eng"},
+            {"繁體中文", "cht"}
+        };
+        private Dictionary<string, Dictionary<string, string>> dictionary = new Dictionary<string, Dictionary<string, string>>(){
+            {"eng",new Dictionary<string,string>(){
+                {"surviveTime", "Survive Time"},
+                {"speed", "Speed"},
+                {"second", "sec"},
+                {"pause", "Pause"},
+                {"continue", "Continue"},
+                {"dead", "You are dead"},
+                {"reset", "ReStart"}
+            }},
+            {"cht",new Dictionary<string,string>(){
+                {"surviveTime", "存活時間"},
+                {"speed", "速度"},
+                {"second", "秒"},
+                {"pause", "暫停"},
+                {"continue", "繼續"},
+                {"dead", "你死了"},
+                {"reset", "重新開始"}
+            }}
+        };
 
         private void PanelUpdate()
         {
