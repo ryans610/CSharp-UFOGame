@@ -1,0 +1,5 @@
+*.suo
+*.user
+UFO/bin/*
+UFO/obj/*
+*.ico
