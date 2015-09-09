@@ -12,7 +12,7 @@ C# .NET 4 above
 2.下載執行檔。Download .exe file.
 
 #How to Play
-![alt tag](http://i.imgur.com/vyu944h.png)
+![alt tag](https://github.com/ryans610/CSharp-UFOGame/blob/master/assets/UFO.png)
 
 使用滑鼠控制橫桿，使飛碟不會掉落。Use mouse to control bar, try keep the UFO not fall.
 
