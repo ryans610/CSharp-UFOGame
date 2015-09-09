@@ -59,7 +59,7 @@ namespace UFO
         //message
         private Dictionary<string, string> languageList = new Dictionary<string, string>();
         private Dictionary<string, Dictionary<string, string>> dictionary = new Dictionary<string, Dictionary<string, string>>();
-        
+
         private void PanelUpdate()
         {
             ScorePanel.Text = dictionary[language]["surviveTime"] + "：" + surviveTime.ToString("0.00") + dictionary[language]["second"] + " " + dictionary[language]["speed"] + "：" + speed.ToString();
@@ -78,7 +78,6 @@ namespace UFO
             {
                 if (found)
                 {
-                    language = kv.Value;
                     LanguageChange.Text = kv.Key;
                     found = false;
                     break;
@@ -87,13 +86,13 @@ namespace UFO
                 {
                     if (kv.Key == LanguageChange.Text)
                     {
+                        language = kv.Value;
                         found = true;
                     }
                 }
             }
             if (found)
             {
-                language = languageList.ElementAt(0).Value;
                 LanguageChange.Text = languageList.ElementAt(0).Key;
             }
             PanelUpdate();
