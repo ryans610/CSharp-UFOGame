@@ -137,6 +137,7 @@ namespace UFO
             if (UFO.Location.Y + UFO.Height > this.Height)
             {
                 timer1.Enabled = false;
+                Pause.Text = dictionary[language]["continue"];
                 MessageBox.Show(dictionary[language]["dead"] + "!\n" + dictionary[language]["surviveTime"] + "：" + surviveTime.ToString("0.00") + dictionary[language]["second"]);
                 Initialize();
             }
