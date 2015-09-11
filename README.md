@@ -1,17 +1,17 @@
 # CSharp-UFOGame
 以C#撰寫的小遊戲，用作教材與示範。A simple game written by C#, is use as teaching material and example.
 
-#Language and Framework
+##Language and Framework
 C# .NET 4 above
 
-#How to Use
+##How to Use
 選擇其中一種：Choose one:
 
 1.下載專案並編譯。Download the project and complie.
 
 2.下載執行檔。Download .exe file.
 
-#How to Play
+##How to Play
 ![Example Image](https://github.com/ryans610/CSharp-UFOGame/blob/master/assets/UFO.png)
 
 使用滑鼠控制橫桿，使飛碟不會掉落。Use mouse to control bar, try keep the UFO not fall.
@@ -27,7 +27,7 @@ C# .NET 4 above
 關閉視窗或按ESC以結束遊戲。Close the window or press ESC to end the game.
 
 ***
-#Information
+##Information
 ###Latest Update
 2015/09/10
 
